@@ -71,12 +71,12 @@ Cache的一致性：
 存储在堆上的对象可以被所有线程所引用和访问，当一个线程持有一个对象的引用，即可以访问它的成员变量。
 
 ## 2.程序的启动原理
-### >2.1 main详解
-    参考：https://blog.51cto.com/lavasoft/53263
-    >>为什么要这么定义，和JVM的运行有关系。
-    当一个类中有main()方法，执行命令“java 类名”则会启动虚拟机执行该类中的main方法。
-    由于JVM在运行这个Java应用程序的时候，首先会调用**main**方法，调用时不实例化这个类的对象，而是通过类名直接调用因此需要是限制为**public      static**对于java中的main方法，jvm有限制，不能有返回值，因此返回值类型为void。
-    main方法中还有一个输入参数，类型为**String[]**，这个也是java的规范，main()方法中必须有一个入参，类细必须String[]，至于字符串数组的名字，
-    这个是可以自己设定的，根据习惯，这个字符串数组的名字一般和sun java规范范例中mian参数名保持一致，取名为**args**。
-    因此，main()方法定义必须是：
-    ```public static void main(String args[])```
+### 2.1 main详解
+参考：https://blog.51cto.com/lavasoft/53263
+>为什么要这么定义，和JVM的运行有关系:
+>>当一个类中有main()方法，执行命令“java 类名”则会启动虚拟机执行该类中的main方法。
+>>由于JVM在运行这个Java应用程序的时候，首先会调用**main**方法，调用时不实例化这个类的对象，而是通过类名直接调用因此需要是限制为**public      >>**static**对于java中的main方法，jvm有限制，不能有返回值，因此返回值类型为void。
+>>main方法中还有一个输入参数，类型为**String[]**，这个也是java的规范，main()方法中必须有一个入参，类细必须String[]，至于字符串数组的名字，
+>>这个是可以自己设定的，根据习惯，这个字符串数组的名字一般和sun java规范范例中mian参数名保持一致，取名为**args**。
+>>因此，main()方法定义必须是：
+ ```public static void main(String args[])```
