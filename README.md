@@ -62,6 +62,7 @@ Cache的一致性：
 ### 1.2 jvm多线程内存模型
 参考：https://www.jianshu.com/p/a3f9f2c3ecf8
 #### JVM的内部的内存模型分为了两部分，thread stack和heap
+![jvm组成](https://upload-images.jianshu.io/upload_images/1234352-0a8474641ef704d5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/358)
 每一个jvm中的线程都有一个线程栈，且包含线程方法的执行信息，调用栈会随着执行的状态改变。它包括了所有的方法和local变量，线程只能访问自己的线程栈，本地变量是私有的。线程栈之间变量不能共享只能传递拷贝。new出来的对象不管是分配本地变量还是成员变量，最终都是存在堆内。
 
 存储在堆上的对象可以被所有线程所引用和访问，当一个线程持有一个对象的引用，即可以访问它的成员变量。
